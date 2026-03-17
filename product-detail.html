@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — BallerStore</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <div id="loader"><div class="loader-content"><div class="loader-logo">BALLER<span>STORE</span></div><div class="loader-bar"></div></div></div>
+  <div id="toast-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BALLER<span>STORE</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="products.html">All Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <form class="nav-search-form" onsubmit="return false;"><input type="text" placeholder="Search products..."><button type="submit">🔍</button></form>
+        <a href="auth.html" class="nav-icon-btn auth-link" title="Login">👤</a>
+        <a href="cart.html" class="nav-icon-btn" title="Cart">🛒<span class="cart-badge">0</span></a>
+      </div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <form class="mobile-search" onsubmit="return false;"><input type="text" placeholder="Search..."><button type="submit">🔍</button></form>
+    <a href="index.html">Home</a><a href="men.html">Men</a><a href="women.html">Women</a><a href="products.html">All Products</a><a href="cart.html">Cart</a><a href="auth.html">Login</a>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="container">
+      <div style="padding:24px 0 0;">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="products.html">Products</a>
+          <span>›</span>
+          <span style="color:var(--white)" id="breadcrumb-name">Product</span>
+        </div>
+      </div>
+      <div id="product-detail-content">
+        <!-- Populated by JS -->
+        <div style="text-align:center;padding:100px 20px;color:var(--gray)">
+          <div style="font-size:3rem;margin-bottom:16px;">⏳</div>
+          <p>Loading product...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <section style="padding:0 0 80px;border-top:1px solid var(--dark3);">
+      <div class="container">
+        <div class="section-header reveal" style="margin-top:60px;">
+          <div>
+            <div class="section-subtitle">You Might Also Like</div>
+            <h2 class="section-title">RELATED <span>PRODUCTS</span></h2>
+          </div>
+        </div>
+        <div class="products-grid" id="related-products"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo">BALLER<span>STORE</span></div><p class="footer-tagline">Premium sportswear for every athlete.</p><div class="footer-socials"><div class="social-icon">📸</div><div class="social-icon">🐦</div><div class="social-icon">📘</div></div></div>
+        <div><div class="footer-col-title">Shop</div><div class="footer-links"><a href="men.html">Men</a><a href="women.html">Women</a><a href="products.html">All</a></div></div>
+        <div><div class="footer-col-title">Help</div><div class="footer-links"><a href="#">Size Guide</a><a href="#">Returns</a><a href="#">Contact</a></div></div>
+        <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="#">About</a><a href="#">Careers</a></div></div>
+      </div>
+      <div class="footer-bottom"><div class="footer-copy">© 2025 BallerStore.</div><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Update breadcrumb after product loads
+    setTimeout(() => {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id'));
+      if (window.PRODUCTS) {
+        const p = PRODUCTS.find(x => x.id === id);
+        if (p) document.getElementById('breadcrumb-name').textContent = p.name;
+      }
+    }, 200);
+  </script>
+</body>
+</html>

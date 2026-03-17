@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BallerStore — Premium Sportswear</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">BALLER<span>STORE</span></div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BALLER<span>STORE</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="products.html">All Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <form class="nav-search-form" onsubmit="return false;">
+          <input type="text" placeholder="Search products...">
+          <button type="submit">🔍</button>
+        </form>
+        <a href="auth.html" class="nav-icon-btn auth-link" title="Login">👤</a>
+        <a href="cart.html" class="nav-icon-btn" title="Cart">
+          🛒
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <form class="mobile-search" onsubmit="return false;">
+      <input type="text" placeholder="Search products...">
+      <button type="submit">🔍</button>
+    </form>
+    <a href="index.html">Home</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="products.html">All Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="auth.html">Login / Signup</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-slides">
+        <div class="hero-slide hero-slide-1 active"></div>
+        <div class="hero-slide hero-slide-2"></div>
+        <div class="hero-slide hero-slide-3"></div>
+      </div>
+      <div class="hero-shapes">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+      </div>
+      <div class="hero-bg-text">BALLER</div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag">New Season 2025</div>
+          <h1 class="hero-title">
+            PLAY<br>LIKE A<br><span>BALLER</span>
+          </h1>
+          <p class="hero-subtitle">
+            Premium sportswear engineered for those who refuse to settle. 
+            Performance meets style in every stitch.
+          </p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn btn-primary">Shop Now</a>
+            <a href="men.html" class="btn btn-outline">Men's Collection</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-indicator">
+        <div class="hero-dot active"></div>
+        <div class="hero-dot"></div>
+        <div class="hero-dot"></div>
+      </div>
+      <div class="hero-scroll">Scroll</div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+      <div class="ticker-inner">
+        <span class="ticker-item">FREE SHIPPING ON ORDERS ABOVE ₹2000</span>
+        <span class="ticker-item">NEW SEASON ARRIVALS</span>
+        <span class="ticker-item">UP TO 40% OFF SALE ITEMS</span>
+        <span class="ticker-item">PREMIUM SPORTSWEAR</span>
+        <span class="ticker-item">30-DAY EASY RETURNS</span>
+        <span class="ticker-item">FREE SHIPPING ON ORDERS ABOVE ₹2000</span>
+        <span class="ticker-item">NEW SEASON ARRIVALS</span>
+        <span class="ticker-item">UP TO 40% OFF SALE ITEMS</span>
+        <span class="ticker-item">PREMIUM SPORTSWEAR</span>
+        <span class="ticker-item">30-DAY EASY RETURNS</span>
+      </div>
+    </div>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="category-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-subtitle">Shop By Category</div>
+            <h2 class="section-title">FIND YOUR <span>GAME</span></h2>
+          </div>
+        </div>
+        <div class="category-grid">
+          <!-- Men - Featured -->
+          <div class="category-card cat-men featured reveal" onclick="window.location='men.html'">
+            <div class="category-card-bg"></div>
+            <div class="category-card-overlay"></div>
+            <div class="cat-icon">🏃</div>
+            <div class="category-card-content">
+              <div class="category-card-label">Collection</div>
+              <div class="category-card-title">MEN'S<br>SPORT</div>
+              <a href="men.html" class="category-card-cta">Shop Men →</a>
+            </div>
+          </div>
+          <!-- Women -->
+          <div class="category-card cat-women reveal reveal-delay-1" onclick="window.location='women.html'">
+            <div class="category-card-bg"></div>
+            <div class="category-card-overlay"></div>
+            <div class="cat-icon">🤸</div>
+            <div class="category-card-content">
+              <div class="category-card-label">Collection</div>
+              <div class="category-card-title">WOMEN</div>
+              <a href="women.html" class="category-card-cta">Shop Women →</a>
+            </div>
+          </div>
+          <!-- Kids -->
+          <div class="category-card cat-kids reveal reveal-delay-2" onclick="window.location='products.html?category=kids'">
+            <div class="category-card-bg"></div>
+            <div class="category-card-overlay"></div>
+            <div class="cat-icon">⚽</div>
+            <div class="category-card-content">
+              <div class="category-card-label">Collection</div>
+              <div class="category-card-title">KIDS</div>
+              <a href="products.html" class="category-card-cta">Shop Kids →</a>
+            </div>
+          </div>
+          <!-- Sports -->
+          <div class="category-card cat-sports reveal reveal-delay-3" onclick="window.location='products.html'">
+            <div class="category-card-bg"></div>
+            <div class="category-card-overlay"></div>
+            <div class="cat-icon">🏋️</div>
+            <div class="category-card-content">
+              <div class="category-card-label">Collection</div>
+              <div class="category-card-title">SPORT</div>
+              <a href="products.html" class="category-card-cta">Shop Sport →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="products-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-subtitle">Bestsellers</div>
+            <h2 class="section-title">FEATURED <span>PICKS</span></h2>
+          </div>
+          <a href="products.html" class="section-link">View All Products →</a>
+        </div>
+        <div class="products-grid" id="featured-products">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMO BANNER -->
+    <section class="container">
+      <div class="promo-banner reveal">
+        <div class="promo-banner-text">
+          <div class="promo-tag">⚡ Limited Time Offer</div>
+          <h2 class="promo-title">SEASON<br>END SALE</h2>
+          <p class="promo-desc">Don't miss out on massive discounts across our entire range. Premium gear at unbeatable prices.</p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap">
+            <a href="products.html" class="btn btn-accent">Shop the Sale</a>
+            <a href="products.html" class="btn btn-outline">View All</a>
+          </div>
+        </div>
+        <div class="promo-banner-visual">
+          <div class="promo-number">40%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section class="products-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-subtitle">Just Dropped</div>
+            <h2 class="section-title">NEW <span>ARRIVALS</span></h2>
+          </div>
+          <a href="products.html" class="section-link">See All New →</a>
+        </div>
+        <div class="products-grid" id="new-arrivals">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES STRIP -->
+    <section class="features-strip">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item reveal">
+            <div class="feature-icon">🚚</div>
+            <div class="feature-title">Free Delivery</div>
+            <div class="feature-text">On orders above ₹2,000</div>
+          </div>
+          <div class="feature-item reveal reveal-delay-1">
+            <div class="feature-icon">🔄</div>
+            <div class="feature-title">Easy Returns</div>
+            <div class="feature-text">30-day hassle-free returns</div>
+          </div>
+          <div class="feature-item reveal reveal-delay-2">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Secure Payment</div>
+            <div class="feature-text">100% secure transactions</div>
+          </div>
+          <div class="feature-item reveal reveal-delay-3">
+            <div class="feature-icon">🏆</div>
+            <div class="feature-title">Premium Quality</div>
+            <div class="feature-text">Performance-grade materials</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS SECTION -->
+    <section class="brands-section">
+      <div class="container">
+        <div class="brands-label">Trusted Performance Partners</div>
+        <div class="brands-grid">
+          <div class="brand-item">AEROTEX</div>
+          <div class="brand-item">SWIFTCORE</div>
+          <div class="brand-item">FLEXWEAR</div>
+          <div class="brand-item">PROFIT</div>
+          <div class="brand-item">ZENRUN</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-newsletter reveal">
+        <div class="newsletter-text">
+          <h3>JOIN THE SQUAD</h3>
+          <p>Get exclusive deals, new arrivals and training tips. No spam.</p>
+        </div>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email">
+          <button class="newsletter-btn" onclick="showToast('Thanks for subscribing! 🎉','success')">Subscribe</button>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">BALLER<span>STORE</span></div>
+          <p class="footer-tagline">Premium sportswear for athletes and sport enthusiasts. Play hard, look sharp.</p>
+          <div class="footer-socials">
+            <div class="social-icon" title="Instagram">📸</div>
+            <div class="social-icon" title="Twitter">🐦</div>
+            <div class="social-icon" title="Facebook">📘</div>
+            <div class="social-icon" title="YouTube">▶️</div>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Shop</div>
+          <div class="footer-links">
+            <a href="men.html">Men's Collection</a>
+            <a href="women.html">Women's Collection</a>
+            <a href="products.html">New Arrivals</a>
+            <a href="products.html">Sale</a>
+            <a href="products.html">Accessories</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Help</div>
+          <div class="footer-links">
+            <a href="#">Size Guide</a>
+            <a href="#">Shipping Info</a>
+            <a href="#">Returns & Exchanges</a>
+            <a href="#">Track Order</a>
+            <a href="#">FAQs</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="#">About BallerStore</a>
+            <a href="#">Careers</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Press</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 BallerStore. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

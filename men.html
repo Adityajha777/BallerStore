@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Collection — BallerStore</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body data-gender="men">
+  <div id="loader"><div class="loader-content"><div class="loader-logo">BALLER<span>STORE</span></div><div class="loader-bar"></div></div></div>
+  <div id="toast-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BALLER<span>STORE</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="men.html" class="active">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="products.html">All Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <form class="nav-search-form" onsubmit="return false;"><input type="text" placeholder="Search products..."><button type="submit">🔍</button></form>
+        <a href="auth.html" class="nav-icon-btn auth-link" title="Login">👤</a>
+        <a href="cart.html" class="nav-icon-btn" title="Cart">🛒<span class="cart-badge">0</span></a>
+      </div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <form class="mobile-search" onsubmit="return false;"><input type="text" placeholder="Search..."><button type="submit">🔍</button></form>
+    <a href="index.html">Home</a><a href="men.html">Men</a><a href="women.html">Women</a><a href="products.html">All Products</a><a href="cart.html">Cart</a><a href="auth.html">Login</a>
+  </div>
+
+  <main class="page-wrapper">
+    <!-- HERO -->
+    <div style="background:linear-gradient(135deg,#0a0a1e,#0f1428,#091428);padding:120px 0 60px;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(0,229,255,0.08) 0%,transparent 60%);"></div>
+      <div style="position:absolute;top:50%;right:5%;font-family:var(--font-display);font-size:18vw;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;">MEN</div>
+      <div class="container" style="position:relative;">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a><span>›</span><span style="color:var(--white)">Men</span>
+        </div>
+        <h1 style="font-family:var(--font-display);font-size:clamp(3rem,9vw,7rem);letter-spacing:3px;line-height:0.9;margin-bottom:16px;">
+          MEN'S<br><span style="color:var(--accent2)">COLLECTION</span>
+        </h1>
+        <p style="color:var(--gray);font-size:1rem;max-width:480px;line-height:1.7;">
+          Engineered for performance. Designed for the streets. Discover men's sportswear that works as hard as you do.
+        </p>
+      </div>
+    </div>
+
+    <!-- QUICK CATEGORY FILTERS -->
+    <div style="background:var(--dark);border-bottom:1px solid var(--dark3);padding:20px 0;">
+      <div class="container">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:2px;color:var(--gray);text-transform:uppercase;">Filter:</span>
+          <a href="products.html?gender=men" class="btn btn-dark btn-sm">All Men's</a>
+          <a href="products.html?gender=men&category=shoes" class="btn btn-dark btn-sm">Shoes</a>
+          <a href="products.html?gender=men&category=tops" class="btn btn-dark btn-sm">Tops</a>
+          <a href="products.html?gender=men&category=bottoms" class="btn btn-dark btn-sm">Bottoms</a>
+          <a href="products.html?gender=men&category=accessories" class="btn btn-dark btn-sm">Accessories</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEN HIGHLIGHTS -->
+    <section style="padding:60px 0 0;">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:60px;">
+          <div onclick="window.location='products.html?gender=men&category=shoes'" style="background:linear-gradient(135deg,#0a0f1e,#091428);border:1px solid var(--dark3);border-radius:4px;padding:40px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .3s;" onmouseover="this.style.borderColor='var(--accent2)'" onmouseout="this.style.borderColor='var(--dark3)'">
+            <div style="position:absolute;bottom:-20px;right:-10px;font-size:8rem;opacity:0.12;">👟</div>
+            <div style="font-size:0.7rem;font-weight:700;letter-spacing:3px;color:var(--accent2);margin-bottom:10px;">NEW SEASON</div>
+            <h2 style="font-family:var(--font-display);font-size:2.5rem;letter-spacing:2px;margin-bottom:10px;">FOOTWEAR</h2>
+            <p style="color:var(--gray);font-size:.88rem;margin-bottom:20px;">Performance running shoes, training footwear and lifestyle kicks.</p>
+            <span style="font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);border-bottom:2px solid var(--accent2);padding-bottom:2px;">Shop Footwear →</span>
+          </div>
+          <div onclick="window.location='products.html?gender=men&category=tops'" style="background:linear-gradient(135deg,#1a0f00,#1a1200);border:1px solid var(--dark3);border-radius:4px;padding:40px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--dark3)'">
+            <div style="position:absolute;bottom:-20px;right:-10px;font-size:8rem;opacity:0.12;">👕</div>
+            <div style="font-size:0.7rem;font-weight:700;letter-spacing:3px;color:var(--accent);margin-bottom:10px;">BESTSELLERS</div>
+            <h2 style="font-family:var(--font-display);font-size:2.5rem;letter-spacing:2px;margin-bottom:10px;">APPAREL</h2>
+            <p style="color:var(--gray);font-size:.88rem;margin-bottom:20px;">Training tops, running tees and compression layers for peak performance.</p>
+            <span style="font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);border-bottom:2px solid var(--accent);padding-bottom:2px;">Shop Apparel →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section style="padding:0 0 80px;">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-subtitle">Men's Gear</div>
+            <h2 class="section-title">SHOP MEN'S <span>COLLECTION</span></h2>
+          </div>
+          <a href="products.html?gender=men" class="section-link">View All →</a>
+        </div>
+        <div class="products-grid" id="category-products-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo">BALLER<span>STORE</span></div><p class="footer-tagline">Premium sportswear for every athlete.</p><div class="footer-socials"><div class="social-icon">📸</div><div class="social-icon">🐦</div><div class="social-icon">📘</div></div></div>
+        <div><div class="footer-col-title">Men's Shop</div><div class="footer-links"><a href="products.html?gender=men&category=shoes">Shoes</a><a href="products.html?gender=men&category=tops">Tops</a><a href="products.html?gender=men&category=bottoms">Bottoms</a><a href="products.html?gender=men&category=accessories">Accessories</a></div></div>
+        <div><div class="footer-col-title">Help</div><div class="footer-links"><a href="#">Size Guide</a><a href="#">Returns</a><a href="#">FAQs</a></div></div>
+        <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="#">About</a><a href="#">Contact</a><a href="#">Careers</a></div></div>
+      </div>
+      <div class="footer-bottom"><div class="footer-copy">© 2025 BallerStore.</div><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

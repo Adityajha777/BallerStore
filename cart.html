@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — BallerStore</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <div id="loader"><div class="loader-content"><div class="loader-logo">BALLER<span>STORE</span></div><div class="loader-bar"></div></div></div>
+  <div id="toast-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BALLER<span>STORE</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="products.html">All Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <form class="nav-search-form" onsubmit="return false;"><input type="text" placeholder="Search products..."><button type="submit">🔍</button></form>
+        <a href="auth.html" class="nav-icon-btn auth-link" title="Login">👤</a>
+        <a href="cart.html" class="nav-icon-btn" title="Cart">🛒<span class="cart-badge">0</span></a>
+      </div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <form class="mobile-search" onsubmit="return false;"><input type="text" placeholder="Search..."><button type="submit">🔍</button></form>
+    <a href="index.html">Home</a><a href="men.html">Men</a><a href="women.html">Women</a><a href="products.html">All Products</a><a href="cart.html">Cart</a><a href="auth.html">Login</a>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="container">
+      <div class="cart-layout">
+        <!-- CART ITEMS -->
+        <div>
+          <div class="cart-header-row">
+            <h1 class="cart-title">YOUR <span style="color:var(--accent)">BAG</span></h1>
+            <button type="button" id="remove-all-btn" class="cart-clear-btn">Remove All</button>
+          </div>
+          <div id="cart-items">
+            <!-- Populated by JS -->
+          </div>
+          <div style="margin-top:24px;">
+            <a href="products.html" style="font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid var(--dark3);padding-bottom:2px;transition:color .2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--gray)'">← Continue Shopping</a>
+          </div>
+        </div>
+
+        <!-- CART SUMMARY -->
+        <div>
+          <div class="cart-summary" id="cart-summary">
+            <div class="cart-summary-title">ORDER SUMMARY</div>
+
+            <div class="coupon-row">
+              <input type="text" class="coupon-input" placeholder="Enter promo code (try BALLER10)">
+              <button class="coupon-btn">Apply</button>
+            </div>
+
+            <div class="summary-row">
+              <span class="label">Subtotal</span>
+              <span id="summary-subtotal">₹0</span>
+            </div>
+            <div class="summary-row">
+              <span class="label">Shipping</span>
+              <span id="summary-shipping">₹199</span>
+            </div>
+            <div class="summary-row">
+              <span class="label">Tax (GST 18%)</span>
+              <span>Included</span>
+            </div>
+            <div class="summary-row bold">
+              <span class="label">Total</span>
+              <span id="summary-total">₹0</span>
+            </div>
+
+            <a href="checkout.html">
+              <button class="checkout-btn-main">
+                Proceed to Checkout →
+              </button>
+            </a>
+
+            <div class="secure-badges">
+              <span>🔒</span>
+              <span>Secure & Encrypted Payment</span>
+            </div>
+
+            <div style="display:flex;justify-content:center;gap:12px;margin-top:16px;flex-wrap:wrap;">
+              <div style="background:var(--dark2);border:1px solid var(--dark3);border-radius:3px;padding:5px 12px;font-size:0.72rem;color:var(--gray);">💳 Cards</div>
+              <div style="background:var(--dark2);border:1px solid var(--dark3);border-radius:3px;padding:5px 12px;font-size:0.72rem;color:var(--gray);">📱 UPI</div>
+              <div style="background:var(--dark2);border:1px solid var(--dark3);border-radius:3px;padding:5px 12px;font-size:0.72rem;color:var(--gray);">🏦 Net Banking</div>
+              <div style="background:var(--dark2);border:1px solid var(--dark3);border-radius:3px;padding:5px 12px;font-size:0.72rem;color:var(--gray);">💵 COD</div>
+            </div>
+          </div>
+
+          <!-- You Might Like -->
+          <div style="margin-top:24px;">
+            <div style="font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:16px;">Customers Also Bought</div>
+            <div id="cart-suggestions" style="display:flex;flex-direction:column;gap:12px;">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="padding:28px 0 0;"><div class="footer-copy">© 2025 BallerStore. All rights reserved.</div><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Cart suggestions
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const suggestionsEl = document.getElementById('cart-suggestions');
+        if (!suggestionsEl || !window.PRODUCTS) return;
+        const suggestions = PRODUCTS.filter(p => p.badge === 'sale').slice(0, 3);
+        suggestionsEl.innerHTML = suggestions.map(p => `
+          <div onclick="window.location='product-detail.html?id=${p.id}'" style="display:flex;align-items:center;gap:12px;background:var(--dark);border:1px solid var(--dark3);border-radius:4px;padding:12px;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--dark3)'" onmouseout="this.style.borderColor='var(--dark3)'">
+            <div style="width:50px;height:50px;background:var(--dark2);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;">${p.icon}</div>
+            <div style="flex:1;">
+              <div style="font-size:.82rem;font-weight:600;margin-bottom:2px;">${p.name}</div>
+              <div style="font-size:.75rem;color:var(--gray);">${formatPrice(p.price)}</div>
+            </div>
+            <button onclick="event.stopPropagation();quickAddToCart(event,${p.id})" style="background:var(--dark3);color:var(--white);border:none;padding:6px 10px;border-radius:2px;font-size:.7rem;font-weight:700;cursor:pointer;">+ Add</button>
+          </div>
+        `).join('');
+      }, 300);
+    });
+  </script>
+</body>
+</html>

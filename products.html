@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products — BallerStore</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <div id="loader"><div class="loader-content"><div class="loader-logo">BALLER<span>STORE</span></div><div class="loader-bar"></div></div></div>
+  <div id="toast-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BALLER<span>STORE</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="products.html" class="active">All Products</a></li>
+      </ul>
+      <div class="nav-actions">
+        <form class="nav-search-form" onsubmit="return false;">
+          <input type="text" placeholder="Search products...">
+          <button type="submit">🔍</button>
+        </form>
+        <a href="auth.html" class="nav-icon-btn auth-link" title="Login">👤</a>
+        <a href="cart.html" class="nav-icon-btn" title="Cart">🛒<span class="cart-badge">0</span></a>
+      </div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <form class="mobile-search" onsubmit="return false;"><input type="text" placeholder="Search products..."><button type="submit">🔍</button></form>
+    <a href="index.html">Home</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="products.html">All Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="auth.html">Login / Signup</a>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="container">
+      <div class="category-hero">
+        <div class="page-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span style="color:var(--white)">Products</span>
+        </div>
+        <h1 class="category-hero-title" id="listing-title">ALL <span>PRODUCTS</span></h1>
+        <p class="category-hero-desc">Browse our complete collection of premium performance sportswear.</p>
+      </div>
+
+      <div class="listing-page">
+        <!-- FILTER SIDEBAR -->
+        <aside class="filter-sidebar">
+          <div class="filter-sidebar-title">FILTERS</div>
+
+          <div class="filter-group">
+            <div class="filter-group-title">Category</div>
+            <div class="filter-options">
+              <div class="filter-option" data-type="category" data-value="shoes">
+                <div class="filter-checkbox">✓</div> Shoes
+              </div>
+              <div class="filter-option" data-type="category" data-value="tops">
+                <div class="filter-checkbox">✓</div> Tops & T-Shirts
+              </div>
+              <div class="filter-option" data-type="category" data-value="bottoms">
+                <div class="filter-checkbox">✓</div> Bottoms
+              </div>
+              <div class="filter-option" data-type="category" data-value="accessories">
+                <div class="filter-checkbox">✓</div> Accessories
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-title">Price Range</div>
+            <input type="range" id="price-range" min="500" max="15000" value="15000" step="100">
+            <div class="price-range-display">
+              <span>₹500</span>
+              <span id="price-display">₹15,000</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-title">Size</div>
+            <div class="filter-sizes">
+              <button class="size-btn" data-size="XS">XS</button>
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="XXL">XXL</button>
+              <button class="size-btn" data-size="7">7</button>
+              <button class="size-btn" data-size="8">8</button>
+              <button class="size-btn" data-size="9">9</button>
+              <button class="size-btn" data-size="10">10</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN LISTING -->
+        <div class="listing-main">
+          <div class="listing-topbar">
+            <div class="listing-count" id="products-count">Loading...</div>
+            <div class="listing-sort">
+              <label>Sort by:</label>
+              <select id="sort-select">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+              </select>
+            </div>
+          </div>
+          <div class="products-grid" id="products-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">BALLER<span>STORE</span></div>
+          <p class="footer-tagline">Premium sportswear for athletes and sport enthusiasts.</p>
+          <div class="footer-socials">
+            <div class="social-icon">📸</div><div class="social-icon">🐦</div><div class="social-icon">📘</div><div class="social-icon">▶️</div>
+          </div>
+        </div>
+        <div><div class="footer-col-title">Shop</div><div class="footer-links"><a href="men.html">Men</a><a href="women.html">Women</a><a href="products.html">New Arrivals</a><a href="products.html">Sale</a></div></div>
+        <div><div class="footer-col-title">Help</div><div class="footer-links"><a href="#">Size Guide</a><a href="#">Returns</a><a href="#">Contact</a></div></div>
+        <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="#">About</a><a href="#">Careers</a><a href="#">Contact</a></div></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 BallerStore. All rights reserved.</div>
+        <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
