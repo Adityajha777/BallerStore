@@ -545,11 +545,23 @@ const goToProduct = (id) => {
   window.location.href = `product-detail.html?id=${id}`;
 };
 
-const quickAddToCart = (e, id) => {
+const AddToCart = (e, id) => {
   e.stopPropagation();
   const btn = e.target;
+
+  // 🔥 GOOGLE ANALYTICS EVENT
+  if (typeof gtag === 'function') {
+    gtag('event', 'add_to_cart', {
+      item_id: id,
+      item_name: 'Product ' + id
+    });
+  }
+
   btn.classList.add('adding');
-  btn.addEventListener('animationend', () => btn.classList.remove('adding'), { once: true });
+
+  btn.addEventListener('animationend', () => 
+    btn.classList.remove('adding'), { once: true });
+
   addToCart(id);
 };
 
@@ -909,8 +921,17 @@ const initProductDetailPage = () => {
     document.getElementById(`tab-${tabId}`)?.classList.add('active');
   };
   window.detailAddToCart = () => {
-    addToCart(product.id, qty, selectedSize, selectedColor);
-  };
+
+  // 🔥 GOOGLE ANALYTICS EVENT
+  if (typeof gtag === 'function') {
+    gtag('event', 'add_to_cart', {
+      item_id: product.id,
+      item_name: product.name
+    });
+  }
+
+  addToCart(product.id, qty, selectedSize, selectedColor);
+};
   window.toggleDetailWishlist = (id, btn) => {
     const idx = wishlist.indexOf(id);
     if (idx > -1) { wishlist.splice(idx, 1); btn.textContent = '🤍'; btn.classList.remove('active'); showToast('Removed from wishlist', 'info'); }
